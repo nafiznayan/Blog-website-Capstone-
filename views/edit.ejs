@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/newBlog.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Edit Blog</h2>
+      <form action="/update/<%= blog.id %>" method="POST">
+        <label>Title:</label>
+        <input type="text" name="title" value="<%= blog.title %>" required />
+
+        <label>Author:</label>
+        <input type="text" name="author" value="<%= blog.author %>" required />
+
+        <label>Content:</label>
+        <textarea name="content" rows="6" required>
+<%= blog.content %></textarea
+        >
+
+        <button type="submit" class="submit-button">Update</button>
+        <a href="/" class="back-button">Cancel</a>
+      </form>
+    </div>
+  </body>
+</html>

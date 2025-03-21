@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Read More - Blog</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/readMore.css" />
+  </head>
+  <body>
+    <div class="container">
+      <% if (locals.blog) { %>
+      <h1 class="text-xl"><%= blog.title %></h1>
+      <p class="text-sm"><%= blog.author %> | August 10, 2024</p>
+
+      <div class="content">
+        <p><%= blog.content %></p>
+      </div>
+      <a href="/" class="back-button">Back to Home</a>
+      <a href="/edit/<%= blog.id %>" class="back-button edit">Edit</a>
+
+      <% } %>
+    </div>
+  </body>
+</html>

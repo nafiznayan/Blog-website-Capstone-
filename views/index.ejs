@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="heading">
+        <h1>Blog Articles</h1>
+
+        <button class="button new" onclick="window.location.href='/new'">
+          New Blog
+        </button>
+      </div>
+
+      <div class="grid">
+        <% if (locals.blogs) { %> <% blogs.forEach(blog => { %>
+        <div class="card">
+          <h3 class="text-xl"><%= blog.title %></h3>
+          <p class="text-sm"><%= blog.author %> | August 10, 2024</p>
+
+          <p style="font-size: 1.25rem">
+            <%= blog.content.substring(0, 150) %>...
+          </p>
+          <div class="button-group">
+            <a href="/read/<%= blog.id %>" class="button">Read More</a>
+            <a href="/edit/<%= blog.id %>" class="button edit">Edit</a>
+            <a href="/delete/<%= blog.id %>" class="button delete">Delete</a>
+          </div>
+        </div>
+        <% })}%>
+      </div>
+    </div>
+  </body>
+</html>
