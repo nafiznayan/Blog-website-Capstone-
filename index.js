@@ -60,6 +60,8 @@ app.get("/edit/:id", (req, res) => {
 
 //Submit New Blog
 app.post("/submit", (req, res) => {
+  const dateBody = req.body.date;
+  console.log("Date from body:", dateBody);
   const formData = req.body;
   const newId = blogs.length > 0 ? blogs[blogs.length - 1].id + 1 : 1; // Generate unique ID
   const newBlog = { id: newId, ...formData };

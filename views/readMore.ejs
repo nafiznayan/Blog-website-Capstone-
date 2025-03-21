@@ -14,7 +14,7 @@
     <div class="container">
       <% if (locals.blog) { %>
       <h1 class="text-xl"><%= blog.title %></h1>
-      <p class="text-sm"><%= blog.author %> | August 10, 2024</p>
+      <p class="text-sm"><%= blog.author %> | <%= blog.date %></p>
 
       <div class="content">
         <p><%= blog.content %></p>
