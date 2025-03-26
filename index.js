@@ -61,7 +61,7 @@ app.get("/edit/:id", (req, res) => {
 //Submit New Blog
 app.post("/submit", (req, res) => {
   const dateBody = req.body.date;
-  console.log("Date from body:", dateBody);
+
   const formData = req.body;
   const newId = blogs.length > 0 ? blogs[blogs.length - 1].id + 1 : 1; // Generate unique ID
   const newBlog = { id: newId, ...formData };
@@ -92,7 +92,7 @@ app.post("/update/:id", (req, res) => {
 //Delete Blog
 app.get("/delete/:id", (req, res) => {
   const blogId = parseInt(req.params.id);
-  console.log(blogId);
+  // console.log(blogId);
   const index = blogs.findIndex((blog) => blog.id === blogId);
 
   if (index !== -1) {
